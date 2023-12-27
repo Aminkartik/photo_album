@@ -21,8 +21,9 @@ def addPhoto(request):
 
         if data['category'] != 'none':
             category = Category.objects.get(id=data['category'])
-        elif data[category_new] != '':
+        elif data['category_new'] != '':
             category, created = Category.objects.get_or_create(name=data['category_new'])
+            name = data['category_new']
         else:
             category = None
 
